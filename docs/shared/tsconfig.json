@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "declaration": true,
+    "experimentalDecorators": true,
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "target": "ES2021",
+    "types": ["jest"]
+  },
+  "exclude": ["coverage", "dist", "doc", "jest", "node_modules", "scripts"]
+}

@@ -1,0 +1,166 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$primary-palette: (
+  50: #e8f0f8,
+  100: #c5daee,
+  200: #9ec2e3,
+  300: #77aad7,
+  400: #5a97cf,
+  500: #3d85c6,
+  600: #377dc0,
+  700: #2f72b9,
+  800: #2768b1,
+  900: #1a55a4,
+  A100: #dae9ff,
+  A200: #a7caff,
+  A400: #74abff,
+  A700: #5b9cff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$accent-palette: (
+  50: #f3f8fc,
+  100: #e2eef8,
+  200: #cfe2f4,
+  300: #bcd6ef,
+  400: #adceeb,
+  500: #9fc5e8,
+  600: #97bfe5,
+  700: #8db8e2,
+  800: #83b0de,
+  900: #72a3d8,
+  A100: #ffffff,
+  A200: #ffffff,
+  A400: #eef6ff,
+  A700: #d4e9ff,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #000000,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$warn-palette: (
+  50: #fcf2e7,
+  100: #f8dec3,
+  200: #f3c89c,
+  300: #eeb274,
+  400: #eaa256,
+  500: #e69138,
+  600: #e38932,
+  700: #df7e2b,
+  800: #db7424,
+  900: #d56217,
+  A100: #ffffff,
+  A200: #ffe3d4,
+  A400: #ffc3a1,
+  A700: #ffb287,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$app-typography: mat.define-typography-config(
+  $font-family: 'Arial, sans-serif',
+);
+
+@include mat.typography-hierarchy($app-typography);
+
+$app-primary-palette: mat.define-palette($primary-palette);
+$app-accent-palette: mat.define-palette($accent-palette);
+$app-warn-palette: mat.define-palette($warn-palette);
+
+$app-dark-theme: mat.define-dark-theme(
+  (
+    color: (
+      primary: $app-primary-palette,
+      accent: $app-accent-palette,
+      warn: $app-warn-palette,
+    ),
+    typography: $app-typography,
+    density: 0,
+  )
+);
+
+$app-light-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $app-primary-palette,
+      accent: $app-accent-palette,
+      warn: $app-warn-palette,
+    ),
+    typography: $app-typography,
+    density: 0,
+  )
+);
+
+@include mat.all-component-themes($app-light-theme);
+
+// @include mat.core-theme($app-dark-theme);
+// @include mat.all-component-themes($app-dark-theme);
+
+// @media (prefers-color-scheme: light) {
+//   @include mat.core-color($app-light-theme);
+//   @include mat.all-component-colors($app-light-theme);
+// }
+
+// @media (prefers-color-scheme: dark) {
+//   @include mat.core-color($app-dark-theme);
+//   @include mat.all-component-colors($app-dark-theme);
+// }
+
+// .dark-theme {
+//   @include mat.core-theme($app-dark-theme);
+//   @include mat.all-component-themes($app-dark-theme);
+// }
+
+// .light-theme {
+//   @include mat.core-theme($app-light-theme);
+//   @include mat.all-component-colors($app-light-theme);
+// }
+
+// .dark-theme {
+//   background-color: #121212;
+//   color: #ffffff;
+// }
