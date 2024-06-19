@@ -1,7 +1,5 @@
 import { config } from './config.mjs';
 import { createAngularProject } from './create-angular-project.mjs';
-import { createNestProject } from './create-nest-project.mjs';
-import { createSharedProject } from './create-shared-project.mjs';
 import {
   createDirectory,
   execute,
@@ -15,16 +13,16 @@ export function createProject() {
   const name = config.name;
   const path = getPath([dir, name]);
 
-  createProjectDirectory(path);
+  initProject(path);
 
-  createSharedProject(path);
+  // createSharedProject(path);
 
   createAngularProject(path);
 
-  createNestProject(path);
+  // createNestProject(path);
 }
 
-function createProjectDirectory(path) {
+function initProject(path) {
   createDirectory(path);
 
   let command =
@@ -35,6 +33,15 @@ function createProjectDirectory(path) {
   execute(command, path);
 
   createPackageJson(path);
+
+  // command = 'git init';
+  // execute(command, path);
+
+  // command = 'git add -a';
+  // execute(command, path);
+
+  // command = 'git commit -m "initial commit"';
+  // execute(command, path);
 }
 
 function createPackageJson(path) {

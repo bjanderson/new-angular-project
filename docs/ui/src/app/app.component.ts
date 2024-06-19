@@ -12,8 +12,6 @@ import { AppNavComponent } from './components/app-nav';
   imports: [RouterOutlet, MatSidenavModule, AppNavComponent],
 })
 export class AppComponent {
-  title = 'moneytool-ui';
-
   constructor(public matIconRegistry: MatIconRegistry) {
     matIconRegistry.setDefaultFontSetClass('fas');
   }

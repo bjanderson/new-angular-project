@@ -4,7 +4,7 @@ import {
   MAT_PAGINATOR_DEFAULT_OPTIONS,
   MatPaginatorDefaultOptions,
 } from '@angular/material/paginator';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { provideToastr } from 'ngx-toastr';
 import { routes } from './app.routes';
@@ -16,7 +16,7 @@ const DEFAULT_PAGINATOR_OPTIONS: MatPaginatorDefaultOptions = {
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideAnimations(),
+    provideAnimationsAsync(),
     provideHttpClient(),
     provideRouter(routes),
     provideToastr(),
