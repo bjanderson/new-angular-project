@@ -1,0 +1,20 @@
+@use '@angular/material' as mat;
+@import 'material-theme/_ui-theme.scss';
+
+.page {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+
+  @if mat.get-theme-type($ui-theme) == dark {
+    background-color: mat.get-theme-color($ui-theme, neutral, 0);
+  } @else {
+  }
+}
+
+.page-header {
+}
+
+.page-content {
+}
