@@ -1,0 +1,51 @@
+@hostname = localhost
+@port = 3000
+@host = {{hostname}}:{{port}}
+@server = http://{{host}}
+@api = {{server}}/api/account-provider
+@jsonContentType = Content-Type: application/json;charset=utf-8
+
+###
+
+POST {{api}}
+{{jsonContentType}}
+
+{
+  "id": "",
+  "name": "Bank A"
+}
+
+###
+
+POST {{api}}
+{{jsonContentType}}
+
+{
+  "id": "test-1",
+  "name": "Bank A"
+}
+
+###
+
+GET {{api}}
+{{jsonContentType}}
+
+###
+
+GET {{api}}/test-1
+{{jsonContentType}}
+
+###
+
+PATCH {{api}}/test-1
+{{jsonContentType}}
+
+{
+  "id": "test-1",
+  "name": "Bank B"
+}
+
+###
+
+DELETE {{api}}/test-1
+{{jsonContentType}}

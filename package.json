@@ -1,12 +1,16 @@
 {
-  "name": "new-fullstack-angular-project",
-  "version": "0.0.1",
-  "keywords": [],
-  "author": "BJ Anderson",
-  "license": "MIT",
-  "description": "",
-  "bin": "./bin.mjs",
+  "name": "@bjanderson/my-project",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:server": "npm run start --prefix ./server",
+    "start:ui": "npm run start --prefix ./ui",
+    "start": "run-p -r start:server start:ui"
+  },
+  "devDependencies": {
+    "npm-run-all": "4.1.5"
+  },
+  "dependencies": {
+    "@bjanderson/utils": "2.1.2"
   }
 }
